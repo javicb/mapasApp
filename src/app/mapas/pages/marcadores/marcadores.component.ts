@@ -70,7 +70,9 @@ export class MarcadoresComponent implements AfterViewInit {
     });
   }
 
-  irMarcador(): void {
-
+  irMarcador(marker: mapboxgl.Marker): void {
+    this.mapa.flyTo({
+      center: marker.getLngLat()
+    });
   }
 }
